@@ -7,6 +7,13 @@ markdown / {
     template index _assets/templates/index.html
 }
 
+log /var/log/caddy/archives-t2t-io.access.log {
+	rotate {
+		size	100 # Rotate after 100 MB
+		keep	10
+	}
+}
+
 git github.com/t2t-io/archives.t2t.io {
 	repo	https://github.com/t2t-io/archives.t2t.io.git
 	hook	/webhook
