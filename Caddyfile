@@ -1,0 +1,8 @@
+localhost:3000
+
+browse
+
+markdown / {
+    template article _assets/templates/article.html
+    template index _assets/templates/index.html
+}
