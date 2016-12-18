@@ -1,4 +1,8 @@
-
+---
+template: article
+title: Derivated OS Images for BeagleBone Boards
+sitename: archives
+---
 
 ## ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb
 
