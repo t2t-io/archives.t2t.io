@@ -6,3 +6,8 @@ markdown / {
     template article _assets/templates/article.html
     template index _assets/templates/index.html
 }
+
+git github.com/t2t-io/archives.t2t.io {
+	repo	https://github.com/t2t-io/archives.t2t.io.git
+	hook	/webhook
+}
