@@ -66,7 +66,7 @@ sitename: archives
 | property | value |
 |---|---|
 | base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | 4.4.6 from [ubuntu-14.04.3-console-armhf-2016-04-07](/embedded-linux/os/beaglebone/kernels/) |
+| kernel | as-is (4.1.17) |
 
 - installed packages (extras)
 	- python3-pip
@@ -97,7 +97,8 @@ sitename: archives
 | property | value |
 |---|---|
 | base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | 4.4.12 from [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb](/embedded-linux/os/beaglebone/kernels/) |
+| kernel | as-is (4.1.17) |
+| applicable | bb-black, bb-green |
 
 
 - installed packages (extras)
@@ -118,7 +119,9 @@ sitename: archives
 | property | value |
 |---|---|
 | base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | 4.4.12 from [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb](/embedded-linux/os/beaglebone/kernels/) |
+| kernel | as-is (4.1.17) |
+| applicable | bb-black, bb-green |
+
 
 - installed packages (extras)
 	- N/A
@@ -142,7 +145,8 @@ sitename: archives
 | property | value |
 |---|---|
 | base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | 4.4.12 from [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb](/embedded-linux/os/beaglebone/kernels/) |
+| kernel | as-is (4.1.17) |
+| applicable | bb-black, bb-green |
 
 - installed packages (extras)
 	- N/A
@@ -162,9 +166,21 @@ sitename: archives
 	- `bluez`
 
 
+### [v5](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v4.img.xz) (2016/12/18)
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | 4.4.12 from [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb](/embedded-linux/os/beaglebone/kernels/) |
+| applicable | bb-black, bb-green |
+
+
+
 ## References
 
-    2015-10-09 - v4.1.10-ti-r21 kernel
-    2015-09-11 - v4.1.6-ti-r15 kernel
-    2015-08-17 - v4.1.5-ti-r10 kernel
-    2016-02-11 - v4.1.17-ti-rt-r47 kernel
+```text
+2015-10-09 - v4.1.10-ti-r21 kernel
+2015-09-11 - v4.1.6-ti-r15 kernel
+2015-08-17 - v4.1.5-ti-r10 kernel
+2016-02-11 - v4.1.17-ti-rt-r47 kernel
+```
