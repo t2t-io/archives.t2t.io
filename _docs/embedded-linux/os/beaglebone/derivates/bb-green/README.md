@@ -184,6 +184,13 @@ export PRE_BUILT_PACKAGES="bluez-5.32-src"
 
 - installed packages (extras)
 	- **bluez 5.32**
+	- libdbus-1-dev
+	- libdbus-glib-1-dev
+	- libglib2.0-dev
+	- libical-dev
+	- libreadline-dev
+	- libudev-dev
+	- libusb-dev
 - installed nodejs runtimes (via nodenv)
 	- **4.4.7** (default)
 	- 4.7.0 (newly-added)
