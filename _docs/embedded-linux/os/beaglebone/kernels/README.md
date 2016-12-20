@@ -13,8 +13,11 @@ Here are list of kernels from different sources:
 
 ## Kernels from Prebuilt Image
 
-- [ubuntu-14.04.3-console-armhf-2016-04-07-kernel-4.4.6.tar.gz](ubuntu-14.04.3-console-armhf-2016-04-07-kernel-4.4.6.tar.gz) from [elinux](https://rcn-ee.online/rootfs/2016-04-07/microsd/bone-ubuntu-16.04-console-armhf-2016-04-07-2gb.img.xz)
-- [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb-kernel-4.4.12.tar.gz](bone-ubuntu-16.04-console-armhf-2016-06-09-2gb-kernel-4.4.12.tar.gz) from [elinux](https://rcn-ee.online/rootfs/2016-06-09/microsd/)
+| version | archive | source |
+|---|---|---|
+| 4.4.6 | [ubuntu-14.04.3-console-armhf-2016-04-07-kernel-4.4.6.tar.gz](ubuntu-14.04.3-console-armhf-2016-04-07-kernel-4.4.6.tar.gz) | [elinux](https://rcn-ee.online/rootfs/2016-04-07/microsd/bone-ubuntu-16.04-console-armhf-2016-04-07-2gb.img.xz) |
+| 4.4.12 | [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb-kernel-4.4.12.tar.gz](bone-ubuntu-16.04-console-armhf-2016-06-09-2gb-kernel-4.4.12.tar.gz) | [elinux](https://rcn-ee.online/rootfs/2016-06-09/microsd/) |
+| 4.4.39 | [bone-debian-8.6-seeed-iot-armhf-2016-12-18-kernel-4.4.39.tar.gz](bone-debian-8.6-seeed-iot-armhf-2016-12-18-kernel-4.4.39.tar.gz) | [elinux/testing](https://rcn-ee.com/rootfs/bb.org/testing/) ([local mirror](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green-wireless/README.md)) |
 
 
 ## Kernels from EMMC Dumps

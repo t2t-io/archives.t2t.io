@@ -166,13 +166,36 @@ sitename: archives
 	- `bluez`
 
 
-### [v5](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v4.img.xz) (2016/12/18)
+### [v5](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v5.img.xz) (2016/12/20)
 
 | property | value |
 |---|---|
 | base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | 4.4.12 from [bone-ubuntu-16.04-console-armhf-2016-06-09-2gb](/embedded-linux/os/beaglebone/kernels/) |
-| applicable | bb-black, bb-green |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [6783cb79cf00e01162ad08e29dfb141f3c238914](https://github.com/yagamy4680/bbb-image-gen/commit/6783cb79cf00e01162ad08e29dfb141f3c238914)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src"
+./gen-image "https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+```
+
+- installed packages (extras)
+	- **bluez 5.32**
+- installed nodejs runtimes (via nodenv)
+	- **4.4.7** (default)
+	- 4.7.0 (newly-added)
+	- 6.9.2 (newly-added)
+- installed components
+	- /opt/dotfiles (from https://github.com/yagamy4680/dotfiles)
+	- /root/.nodenv
+	- /root/.vim
+- extras
+   - `apt-get remove apache2 -y && apt-get purge apache2 -y`
+   
+
 
 
 
