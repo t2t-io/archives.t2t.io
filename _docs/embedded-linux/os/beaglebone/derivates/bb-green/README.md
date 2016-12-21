@@ -6,7 +6,9 @@ sitename: archives
 
 ## ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb
 
-### [v1](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb.bin.xz)
+### 14.04.0-v1 
+
+[img](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb.bin.xz), [bmap](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb.bmap)
 
 - base
 	- ubuntu-14.04-console-armhf-2014-08-13.zip
@@ -29,7 +31,9 @@ sitename: archives
 	- libbluetooth-dev
 
 
-### [v2](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb-v2.bin.xz)
+### 14.04.0-v2 
+
+[img](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb-v2.bin.xz), [bmap](ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb-v2.bmap)
 
 - date
 	- 2016/3/16
@@ -61,7 +65,9 @@ sitename: archives
 
 ## ubuntu-14.04.3-console-armhf-2016-02-11
 
-### [v1](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb.img.xz) (2016/4/26)
+### 14.04.3-v1
+
+(2016/4/26) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb.bmap)
 
 | property | value |
 |---|---|
@@ -92,7 +98,9 @@ sitename: archives
     ```
 
 
-### [v2](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v2.img.xz) (2016/07/07)
+### 14.04.3-v2 
+
+(2016/07/07) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v2.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v2.bmap)
 
 | property | value |
 |---|---|
@@ -114,7 +122,9 @@ sitename: archives
 	- /root/.vim
 
 
-### [v3](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v3.img.xz) (2016/07/24)
+### 14.04.3-v3 
+
+(2016/07/24) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v3.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v3.img.xz)
 
 | property | value |
 |---|---|
@@ -140,7 +150,9 @@ sitename: archives
 	- `update-rc.d pppd-dns disable`
 
 
-### [v4](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v4.img.xz) (2016/11/08)
+### 14.04.3-v4 
+
+(2016/11/08) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v4.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v4.bmap)
 
 | property | value |
 |---|---|
@@ -166,7 +178,9 @@ sitename: archives
 	- `bluez`
 
 
-### [v5](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v5.img.xz) (2016/12/20)
+### 14.04.3-v5 
+
+(2016/12/20) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v5.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v5.bmap) 
 
 | property | value |
 |---|---|
