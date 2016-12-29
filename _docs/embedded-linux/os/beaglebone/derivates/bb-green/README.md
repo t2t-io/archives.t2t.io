@@ -215,9 +215,56 @@ export PRE_BUILT_PACKAGES="bluez-5.32-src"
 	- /root/.vim
 - extras
    - `apt-get remove apache2 -y && apt-get purge apache2 -y`
-   
 
 
+### 14.04.3-v6
+
+(2016/12/29) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v6.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-v6.bmap) 
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [e8e88cb801b416b952e0c646fca1d38681b306f5](https://github.com/yagamy4680/bbb-image-gen/commit/e8e88cb801b416b952e0c646fca1d38681b306f5)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+- installed packages (extras)
+	- **bluez 5.32**
+	- (bluez) libdbus-1-dev
+	- (bluez) libdbus-glib-1-dev
+	- (bluez) libglib2.0-dev
+	- (bluez) libical-dev
+	- (bluez) libreadline-dev
+	- (bluez) libudev-dev
+	- (bluez) libusb-dev
+	- (fswebca) libgd2-xpm-dev
+	- (fswebca) libjpeg-dev
+	- (fswebca) libpng-dev
+	- (fswebca) libfreetype6-dev
+	- (misc.) dnsmasq 
+	- (misc.) isc-dhcp-server 
+	- (misc.) hostapd
+- installed nodejs runtimes (via nodenv)
+	- **4.4.7** (default)
+	- 4.7.0
+	- 6.9.2
+- installed components
+	- /opt/dotfiles (from https://github.com/yagamy4680/dotfiles)
+	- /root/.nodenv
+	- /root/.vim
+- extras
+   - `apt-get remove apache2 -y && apt-get purge apache2 -y`
+   - `apt-get remove udhcpd -y && apt-get purge udhcpd -y`
+   - `update-rc.d dnsmasq disable`
+   - `update-rc.d isc-dhcp-server disable`
 
 
 ## References
