@@ -245,6 +245,7 @@ export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirr
 	- (bluez) libreadline-dev
 	- (bluez) libudev-dev
 	- (bluez) libusb-dev
+	- **fswebcam**
 	- (fswebca) libgd2-xpm-dev
 	- (fswebca) libjpeg-dev
 	- (fswebca) libpng-dev
