@@ -293,6 +293,43 @@ Comparing to v6, here are changes:
 - `update-rc.d ntp disable`
 
 
+### 14.04.3-r8
+
+(2017/01/22) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r8.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r8.bmap) 
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [0ff3bda07b796e22f645f72a433ae2e7887f1292](https://github.com/yagamy4680/bbb-image-gen/commit/0ff3bda07b796e22f645f72a433ae2e7887f1292)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to v7, here are changes:
+
+- install [httpie](https://httpie.org/) via `pip` instead of `apt-get`
+- remove [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) and [isc-dhcp-server](https://www.isc.org/downloads/dhcp/) from installation list
+- move [hostapd](http://w1.fi/hostapd/) to `apt-packages.conf`
+- apt-get install:
+  - `libcurl4-openssl-dev`
+  - `libsqlite3-dev`
+  - `sqlite3`
+  - `python-dev`
+  - `cmake`
+- pip install:
+  - `socketIO_client`
+  - `netifaces`
+  - `colorama`
+
+
+
 ## References
 
 ```text
