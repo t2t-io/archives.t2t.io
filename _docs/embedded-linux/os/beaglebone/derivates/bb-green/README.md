@@ -329,6 +329,72 @@ Comparing to v7, here are changes:
   - `colorama`
 
 
+### 14.04.3-r9
+
+(2017/03/24) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.bmap) 
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [37d8a3c231e28d94200705fabaff3c9165482907](https://github.com/yagamy4680/bbb-image-gen/commit/37d8a3c231e28d94200705fabaff3c9165482907)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to r8, here are changes:
+
+- install `gatttool` from bluez to system directory
+- debian package upgrades
+
+| name | r8.txt | current.txt |
+|---|---|---|
+| bind9-host | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| dnsutils | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| krb5-multidev | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libarchive13:armhf | `3.1.2-7ubuntu2.3` | `3.1.2-7ubuntu2.4` |
+| libbind9-90 | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| libdns100 | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| libfreetype6:armhf | `2.5.2-1ubuntu2.5` | `2.5.2-1ubuntu2.6` |
+| libfreetype6-dev | `2.5.2-1ubuntu2.5` | `2.5.2-1ubuntu2.6` |
+| libgd-dev:armhf | `2.1.0-3ubuntu0.5` | `2.1.0-3ubuntu0.6` |
+| libgd2-xpm-dev | `2.1.0-3ubuntu0.5` | `2.1.0-3ubuntu0.6` |
+| libgd3:armhf | `2.1.0-3ubuntu0.5` | `2.1.0-3ubuntu0.6` |
+| libgnutls-dev | `2.12.23-12ubuntu2.5` | `2.12.23-12ubuntu2.7` |
+| libgnutls-openssl27:armhf | `2.12.23-12ubuntu2.5` | `2.12.23-12ubuntu2.7` |
+| libgnutls26:armhf | `2.12.23-12ubuntu2.5` | `2.12.23-12ubuntu2.7` |
+| libgnutlsxx27:armhf | `2.12.23-12ubuntu2.5` | `2.12.23-12ubuntu2.7` |
+| libgssapi-krb5-2:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libgssrpc4:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libisc95 | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| libisccfg90 | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| libk5crypto3:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkadm5clnt-mit9:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkadm5srv-mit9:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkdb5-7:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkrb5-3:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkrb5-dev | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| libkrb5support0:armhf | `1.12+dfsg-2ubuntu5.2` | `1.12+dfsg-2ubuntu5.3` |
+| liblwres90 | `1:9.9.5.dfsg-3ubuntu0.11` | `1:9.9.5.dfsg-3ubuntu0.13` |
+| libnettle4:armhf | `2.7.1-1ubuntu0.1` | `2.7.1-1ubuntu0.2` |
+| libssl-dev:armhf | `1.0.1f-1ubuntu2.21` | `1.0.1f-1ubuntu2.22` |
+| libssl-doc | `1.0.1f-1ubuntu2.21` | `1.0.1f-1ubuntu2.22` |
+| libssl1.0.0:armhf | `1.0.1f-1ubuntu2.21` | `1.0.1f-1ubuntu2.22` |
+| libtiff5:armhf | `4.0.3-7ubuntu0.4` | `4.0.3-7ubuntu0.6` |
+| libtiff5-dev:armhf | `4.0.3-7ubuntu0.4` | `4.0.3-7ubuntu0.6` |
+| libtiffxx5:armhf | `4.0.3-7ubuntu0.4` | `4.0.3-7ubuntu0.6` |
+| libudev-dev | `204-5ubuntu20.20` | `204-5ubuntu20.24` |
+| libudev1:armhf | `204-5ubuntu20.20` | `204-5ubuntu20.24` |
+| libxpm-dev:armhf | `1:3.5.10-1` | `1:3.5.10-1ubuntu0.1` |
+| libxpm4:armhf | `1:3.5.10-1` | `1:3.5.10-1ubuntu0.1` |
+| udev | `204-5ubuntu20.20` | `204-5ubuntu20.24` |
+
 
 ## References
 
