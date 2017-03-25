@@ -331,7 +331,7 @@ Comparing to v7, here are changes:
 
 ### 14.04.3-r9
 
-(2017/03/24) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.bmap) 
+(2017/03/24) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.bmap), and [sqfs](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r9.sqsh) 
 
 | property | value |
 |---|---|
