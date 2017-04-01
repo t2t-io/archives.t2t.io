@@ -396,6 +396,44 @@ Comparing to r8, here are changes:
 | udev | `204-5ubuntu20.20` | `204-5ubuntu20.24` |
 
 
+### 14.04.3-r10
+
+(2017/04/01) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r10.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r10.bmap). README: [markdown](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r10.md)
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [a3a9ce5d1ed0209dd24e1d596f35e8d987c88a0d](https://github.com/yagamy4680/bbb-image-gen/commit/a3a9ce5d1ed0209dd24e1d596f35e8d987c88a0d)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r9, here are major changes:
+
+- Force the `setuptool` of python2 and python3 are upgraded
+- Extra python2 packages
+  - inflection
+- Extra python3 packages
+  - pybars3
+  - ruamel.yaml
+  - colorama
+  - socketIO_client
+  - netifaces
+  - inflection
+- dotfiles
+  - upgrade nodejs 4.7.0 to 4.8.1
+  - upgrade nodejs 6.9.2 to 6.10.1
+  - install nodejs 7.8.1 for experiments
+  - update all git submodules
+
+
 ## References
 
 ```text
