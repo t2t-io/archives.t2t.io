@@ -436,14 +436,6 @@ Comparing to previous version r9, here are major changes:
 
 ### 14.04.3-r11
 
-(2018/01/08) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r11.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r11.bmap).
-
-| property | value |
-|---|---|
-| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
-| kernel | as-is |
-| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
-
 Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [82142fc029e8374b55a630fe823a6514fc7108f6](https://github.com/yagamy4680/bbb-image-gen/commit/82142fc029e8374b55a630fe823a6514fc7108f6)), build with following options:
 
 ```bash
@@ -453,23 +445,77 @@ export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirr
 ./gen-image ${BASE_IMAGE_URL}
 ```
 
-Comparing to previous version r9, here are major changes:
+Comparing to previous version r10, here are major changes:
 
-- Force the `setuptool` of python2 and python3 are upgraded
-- Extra python2 packages
-  - inflection
-- Extra python3 packages
-  - pybars3
-  - ruamel.yaml
-  - colorama
-  - socketIO_client
-  - netifaces
-  - inflection
-- dotfiles
-  - upgrade nodejs 4.7.0 to 4.8.1
-  - upgrade nodejs 6.9.2 to 6.10.1
-  - install nodejs 7.8.1 for experiments
-  - update all git submodules
+- Extra system packages:
+  - `avahi-utils`
+- [dotfiles](https://github.com/yagamy4680/dotfiles/commit/1da3825c7257ee78826705524717f7ba3fe7b7c9)
+  - upgrade nodejs `4.8.1` to `4.8.7`
+  - upgrade nodejs `6.10.1` to `6.12.3`
+  - upgrade nodejs `7.8.0` to `8.9.4` (as next major nodejs runtime)
+  - update all git submodules. ([2d858e088cbfe54c22a12cd7c88ed7f0e5ef981d](https://github.com/yagamy4680/dotfiles/commit/2d858e088cbfe54c22a12cd7c88ed7f0e5ef981d))
+
+- debian package upgrades
+
+| name | r10 | r11 |
+|---|---|---|
+| bind9-host | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| dnsutils | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| hostapd | `1:2.1-0ubuntu1.4` | `1:2.1-0ubuntu1.5` |
+| libbind9-90 | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| libcurl3:armhf | `7.35.0-1ubuntu2.10` | `7.35.0-1ubuntu2.13` |
+| libcurl4-openssl-dev:armhf | `7.35.0-1ubuntu2.10` | `7.35.0-1ubuntu2.13` |
+| libdns100 | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| libexpat1:armhf | `2.1.0-4ubuntu1.3` | `2.1.0-4ubuntu1.4` |
+| libexpat1-dev:armhf | `2.1.0-4ubuntu1.3` | `2.1.0-4ubuntu1.4` |
+| libfreetype6:armhf | `2.5.2-1ubuntu2.6` | `2.5.2-1ubuntu2.8` |
+| libfreetype6-dev | `2.5.2-1ubuntu2.6` | `2.5.2-1ubuntu2.8` |
+| libgcrypt11:armhf | `1.5.3-2ubuntu4.4` | `1.5.3-2ubuntu4.5` |
+| libgcrypt11-dev | `1.5.3-2ubuntu4.4` | `1.5.3-2ubuntu4.5` |
+| libgd-dev:armhf | `2.1.0-3ubuntu0.6` | `2.1.0-3ubuntu0.8` |
+| libgd2-xpm-dev | `2.1.0-3ubuntu0.6` | `2.1.0-3ubuntu0.8` |
+| libgd3:armhf | `2.1.0-3ubuntu0.6` | `2.1.0-3ubuntu0.8` |
+| libgnutls-dev | `2.12.23-12ubuntu2.7` | `2.12.23-12ubuntu2.8` |
+| libgnutls-openssl27:armhf | `2.12.23-12ubuntu2.7` | `2.12.23-12ubuntu2.8` |
+| libgnutls26:armhf | `2.12.23-12ubuntu2.7` | `2.12.23-12ubuntu2.8` |
+| libgnutlsxx27:armhf | `2.12.23-12ubuntu2.7` | `2.12.23-12ubuntu2.8` |
+| libidn11:armhf | `1.28-1ubuntu2.1` | `1.28-1ubuntu2.2` |
+| libidn11-dev | `1.28-1ubuntu2.1` | `1.28-1ubuntu2.2` |
+| libisc95 | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| libisccfg90 | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| libldap-2.4-2:armhf | `2.4.31-1+nmu2ubuntu8.3` | `2.4.31-1+nmu2ubuntu8.4` |
+| libldap2-dev:armhf | `2.4.31-1+nmu2ubuntu8.3` | `2.4.31-1+nmu2ubuntu8.4` |
+| liblwres90 | `1:9.9.5.dfsg-3ubuntu0.13` | `1:9.9.5.dfsg-3ubuntu0.16` |
+| libpython2.7:armhf | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| libpython2.7-dev:armhf | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| libpython2.7-minimal:armhf | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| libpython2.7-stdlib:armhf | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| libpython3.4:armhf | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| libpython3.4-dev:armhf | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| libpython3.4-minimal:armhf | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| libpython3.4-stdlib:armhf | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| librtmp-dev | `2.4+20121230.gitdf6c518-1` | `2.4+20121230.gitdf6c518-1ubuntu0.1` |
+| librtmp0:armhf | `2.4+20121230.gitdf6c518-1` | `2.4+20121230.gitdf6c518-1ubuntu0.1` |
+| libssl-dev:armhf | `1.0.1f-1ubuntu2.22` | `1.0.1f-1ubuntu2.23` |
+| libssl-doc | `1.0.1f-1ubuntu2.22` | `1.0.1f-1ubuntu2.23` |
+| libssl1.0.0:armhf | `1.0.1f-1ubuntu2.22` | `1.0.1f-1ubuntu2.23` |
+| libtasn1-6:armhf | `3.4-3ubuntu0.4` | `3.4-3ubuntu0.5` |
+| libtasn1-6-dev | `3.4-3ubuntu0.4` | `3.4-3ubuntu0.5` |
+| libtiff5:armhf | `4.0.3-7ubuntu0.6` | `4.0.3-7ubuntu0.7` |
+| libtiff5-dev:armhf | `4.0.3-7ubuntu0.6` | `4.0.3-7ubuntu0.7` |
+| libtiffxx5:armhf | `4.0.3-7ubuntu0.6` | `4.0.3-7ubuntu0.7` |
+| libudev-dev | `204-5ubuntu20.24` | `204-5ubuntu20.25` |
+| libudev1:armhf | `204-5ubuntu20.24` | `204-5ubuntu20.25` |
+| ntp | `1:4.2.6.p5+dfsg-3ubuntu2.14.04.10` | `1:4.2.6.p5+dfsg-3ubuntu2.14.04.12` |
+| python2.7 | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| python2.7-dev | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| python2.7-minimal | `2.7.6-8ubuntu0.3` | `2.7.6-8ubuntu0.4` |
+| python3.4 | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| python3.4-dev | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| python3.4-minimal | `3.4.3-1ubuntu1~14.04.5` | `3.4.3-1ubuntu1~14.04.6` |
+| udev | `204-5ubuntu20.24` | `204-5ubuntu20.25` |
+| wpasupplicant | `2.1-0ubuntu1.4` | `2.1-0ubuntu1.5` |
+| xtrans-dev | `1.3.5-1~ubuntu14.04.1` | `1.3.5-1~ubuntu14.04.2` |
 
 
 ### 14.04.3-r14
@@ -511,7 +557,7 @@ Comparing to previous version r11, here are major changes:
   - install nodejs `8.9.4` for experiments
   - update all git submodules
 
-| type | name | 14-04-3-r11.csv | 14-04-3-r14.csv |
+| type | name | r11 | r14 |
 |---|---|---|---|
 | debian | bind9-host | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
 | debian | dnsmasq | `2.68-1ubuntu0.1` | `2.68-1ubuntu0.2` |
@@ -534,7 +580,6 @@ Comparing to previous version r11, here are major changes:
 | python3 | certifi | `2017.11.5` | `2018.1.18` |
 | python3 | ruamel.yaml | `0.15.35` | `0.15.37` |
 | python3 | websocket-client | `0.46.0` | `0.47.0` |
-
 
 ## References
 
