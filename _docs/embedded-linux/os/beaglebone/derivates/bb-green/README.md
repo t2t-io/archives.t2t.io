@@ -605,6 +605,7 @@ Comparing to previous version r11, here are major changes:
 | python3 | ruamel.yaml | `0.15.35` | `0.15.37` |
 | python3 | websocket-client | `0.46.0` | `0.47.0` |
 
+
 ## References
 
 ```text
