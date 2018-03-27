@@ -1,3 +1,9 @@
+---
+template: article
+title: Derivated OS Images for BeagleBone Boards
+sitename: archives
+---
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -21,12 +27,6 @@
 - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
----
-template: article
-title: Derivated OS Images for BeagleBone Boards
-sitename: archives
----
 
 ## ubuntu-14.04-console-armhf-2014-08-13-apps-1400mb
 
