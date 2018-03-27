@@ -434,6 +434,108 @@ Comparing to previous version r9, here are major changes:
   - update all git submodules
 
 
+### 14.04.3-r11
+
+(2018/01/08) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r11.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r11.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [82142fc029e8374b55a630fe823a6514fc7108f6](https://github.com/yagamy4680/bbb-image-gen/commit/82142fc029e8374b55a630fe823a6514fc7108f6)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r9, here are major changes:
+
+- Force the `setuptool` of python2 and python3 are upgraded
+- Extra python2 packages
+  - inflection
+- Extra python3 packages
+  - pybars3
+  - ruamel.yaml
+  - colorama
+  - socketIO_client
+  - netifaces
+  - inflection
+- dotfiles
+  - upgrade nodejs 4.7.0 to 4.8.1
+  - upgrade nodejs 6.9.2 to 6.10.1
+  - install nodejs 7.8.1 for experiments
+  - update all git submodules
+
+
+### 14.04.3-r14
+
+(2018/01/08) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [82142fc029e8374b55a630fe823a6514fc7108f6](https://github.com/yagamy4680/bbb-image-gen/commit/82142fc029e8374b55a630fe823a6514fc7108f6)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r11, here are major changes:
+
+- Extra debian packages
+  - `squashfs-tools`
+  - `pv`
+  - `dnsmasq`
+- Extra source packages
+  - [eeprog](https://github.com/jsarenik/eeprog)
+  - [socat](http://www.dest-unreach.org/socat)
+- Extra python2 packages
+  - `socketIO_client_nexus`
+- Extra python3 packages
+  - `socketIO_client_nexus`
+  - `shyaml`
+- dotfiles
+  - upgrade nodejs `4.8.1` to `4.8.7`
+  - upgrade nodejs `6.10.1` to `6.12.3`
+  - install nodejs `8.9.4` for experiments
+  - update all git submodules
+
+| type | name | 14-04-3-r11.csv | 14-04-3-r14.csv |
+|---|---|---|---|
+| debian | bind9-host | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | dnsmasq | `2.68-1ubuntu0.1` | `2.68-1ubuntu0.2` |
+| debian | dnsmasq-base | `2.68-1ubuntu0.1` | `2.68-1ubuntu0.2` |
+| debian | dnsutils | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | libbind9-90 | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | libcurl3 | `7.35.0-1ubuntu2.13` | `7.35.0-1ubuntu2.15` |
+| debian | libcurl4-openssl-dev | `7.35.0-1ubuntu2.13` | `7.35.0-1ubuntu2.15` |
+| debian | libdns100 | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | libisc95 | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | libisccfg90 | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | liblwres90 | `1:9.9.5.dfsg-3ubuntu0.16` | `1:9.9.5.dfsg-3ubuntu0.17` |
+| debian | libtasn1-6 | `3.4-3ubuntu0.5` | `3.4-3ubuntu0.6` |
+| debian | libtasn1-6-dev | `3.4-3ubuntu0.5` | `3.4-3ubuntu0.6` |
+| debian | libudev-dev | `204-5ubuntu20.25` | `204-5ubuntu20.26` |
+| debian | libudev1 | `204-5ubuntu20.25` | `204-5ubuntu20.26` |
+| debian | udev | `204-5ubuntu20.25` | `204-5ubuntu20.26` |
+| python2 | certifi | `2017.11.5` | `2018.1.18` |
+| python2 | websocket-client | `0.46.0` | `0.47.0` |
+| python3 | certifi | `2017.11.5` | `2018.1.18` |
+| python3 | ruamel.yaml | `0.15.35` | `0.15.37` |
+| python3 | websocket-client | `0.46.0` | `0.47.0` |
+
+
 ## References
 
 ```text
