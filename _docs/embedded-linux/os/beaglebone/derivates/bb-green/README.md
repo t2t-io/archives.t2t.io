@@ -24,6 +24,7 @@ sitename: archives
   - [14.04.3-r10](#14043-r10)
   - [14.04.3-r11](#14043-r11)
   - [14.04.3-r14](#14043-r14)
+  - [14.04.3-r15](#14043-r15)
 - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -544,7 +545,7 @@ Comparing to previous version r10, here are major changes:
 
 ### 14.04.3-r14
 
-(2018/01/08) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.bmap).
+(2018/03/27) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r14.bmap).
 
 | property | value |
 |---|---|
@@ -557,7 +558,7 @@ Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [8
 ```bash
 export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
 export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
-export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src,eprog-0.7.7-github,socat-1.7.3.2-src"
 ./gen-image ${BASE_IMAGE_URL}
 ```
 
@@ -568,8 +569,8 @@ Comparing to previous version r11, here are major changes:
   - `pv`
   - `dnsmasq`
 - Extra source packages
-  - [eeprog](https://github.com/jsarenik/eeprog)
-  - [socat](http://www.dest-unreach.org/socat)
+  - [eeprog](https://github.com/jsarenik/eeprog), 0.7.6
+  - [socat](http://www.dest-unreach.org/socat), upgraded from 1.7.2.3 to 1.7.3.2
 - Extra python2 packages
   - `socketIO_client_nexus`
 - Extra python3 packages
@@ -604,6 +605,40 @@ Comparing to previous version r11, here are major changes:
 | python3 | certifi | `2017.11.5` | `2018.1.18` |
 | python3 | ruamel.yaml | `0.15.35` | `0.15.37` |
 | python3 | websocket-client | `0.46.0` | `0.47.0` |
+
+
+### 14.04.3-r15
+
+(2018/04/03) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r15.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r15.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [82142fc029e8374b55a630fe823a6514fc7108f6](https://github.com/yagamy4680/bbb-image-gen/commit/82142fc029e8374b55a630fe823a6514fc7108f6)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src,eprog-0.7.7-github,socat-1.7.3.2-src"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r14, here are major changes:
+
+- dotfiles
+  - change default nodejs from `4.4.7` to `8.11.1`
+  - keep nodejs `4.4.7` as optional
+  - remove nodejs `6.12.3`
+  - install nodejs `9.10.1` for experiments
+
+| type | name | r14 | r15 |
+|---|---|---|---|
+| debian | libssl-dev | `1.0.1f-1ubuntu2.23` | `1.0.1f-1ubuntu2.24` |
+| debian | libssl-doc | `1.0.1f-1ubuntu2.23` | `1.0.1f-1ubuntu2.24` |
+| debian | libssl1.0.0 | `1.0.1f-1ubuntu2.23` | `1.0.1f-1ubuntu2.24` |
 
 
 ## References

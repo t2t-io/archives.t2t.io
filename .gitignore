@@ -96,3 +96,7 @@ ENV/
 /tmp
 /toolchains
 /misc
+
+# OS specific
+#
+.DS_Store
