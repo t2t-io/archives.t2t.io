@@ -641,6 +641,136 @@ Comparing to previous version r14, here are major changes:
 | debian | libssl1.0.0 | `1.0.1f-1ubuntu2.23` | `1.0.1f-1ubuntu2.24` |
 
 
+
+### 14.04.3-r16
+
+(2018/04/03) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [82142fc029e8374b55a630fe823a6514fc7108f6](https://github.com/yagamy4680/bbb-image-gen/commit/82142fc029e8374b55a630fe823a6514fc7108f6)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fbtftp-src,fswebcam-src,eprog-0.7.7-github,socat-1.7.3.2-src"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r15, here are major changes:
+
+- New packages: (**utilities**)
+  - `curl`
+  - `tcptrack`
+  - `iftop`
+  - `ifstat`
+  - `speedometer`
+  - `ethtool`
+  - `ifplugd`
+- New packages: (**dev-tooles**)
+  - `dosfstools`
+  - `initramfs-tools`
+  - `u-boot-tools`
+  - `rsync`
+- New packages: (**daemon**)
+  - `chrony` (but `ntp` is removed)
+- New packages: (**libraries**)
+  - `libpcap-dev`
+  - `libavahi-compat-libdnssd-dev`
+  - `libi2c-dev`
+- New Python3 packages:
+  - `sarge`
+  - `fbtftp`
+
+- dotfiles
+  - change default nodejs from `4.4.7` to `8.11.1`
+  - keep nodejs `4.4.7` as optional
+  - remove nodejs `6.12.3`
+  - install nodejs `9.10.1` for experiments
+
+Package Differences:
+
+| type | name | r16.csv | r15.csv |
+|---|---|---|---|
+| debian | avahi-utils | `0.6.31-4ubuntu1.2` | `0.6.31-4ubuntu1.1` |
+| debian | dosfstools | `3.0.26-1ubuntu0.1` | `3.0.26-1` |
+| debian | initramfs-tools | `0.103ubuntu4.11` | `0.103ubuntu4.2-1rcnee1~bpo1404+20151007+1` |
+| debian | initramfs-tools-bin | `0.103ubuntu4.11` | `0.103ubuntu4.2-1rcnee1~bpo1404+20151007+1` |
+| debian | libavahi-client3 | `0.6.31-4ubuntu1.2` | `0.6.31-4ubuntu1.1` |
+| debian | libavahi-common3 | `0.6.31-4ubuntu1.2` | `0.6.31-4ubuntu1` |
+| debian | libcurl3 | `7.35.0-1ubuntu2.16` | `7.35.0-1ubuntu2.15` |
+| debian | libcurl4-openssl-dev | `7.35.0-1ubuntu2.16` | `7.35.0-1ubuntu2.15` |
+| debian | libgcrypt11 | `1.5.3-2ubuntu4.6` | `1.5.3-2ubuntu4.5` |
+| debian | libgcrypt11-dev | `1.5.3-2ubuntu4.6` | `1.5.3-2ubuntu4.5` |
+| debian | libjpeg-turbo8 | `1.3.0-0ubuntu2.1` | `1.3.0-0ubuntu2` |
+| debian | libjpeg-turbo8-dev | `1.3.0-0ubuntu2.1` | `1.3.0-0ubuntu2` |
+| debian | libpng12-0 | `1.2.50-1ubuntu2.14.04.3` | `1.2.50-1ubuntu2.14.04.2` |
+| debian | libpng12-dev | `1.2.50-1ubuntu2.14.04.3` | `1.2.50-1ubuntu2.14.04.2` |
+| debian | libssl-dev | `1.0.1f-1ubuntu2.26` | `1.0.1f-1ubuntu2.24` |
+| debian | libssl-doc | `1.0.1f-1ubuntu2.26` | `1.0.1f-1ubuntu2.24` |
+| debian | libssl1.0.0 | `1.0.1f-1ubuntu2.26` | `1.0.1f-1ubuntu2.24` |
+| debian | libudev-dev | `204-5ubuntu20.28` | `204-5ubuntu20.26` |
+| debian | libudev1 | `204-5ubuntu20.28` | `204-5ubuntu20.26` |
+| debian | perl | `5.18.2-2ubuntu1.6` | `5.18.2-2ubuntu1` |
+| debian | perl-base | `5.18.2-2ubuntu1.6` | `5.18.2-2ubuntu1` |
+| debian | perl-modules | `5.18.2-2ubuntu1.6` | `5.18.2-2ubuntu1` |
+| debian | rsync | `3.1.0-2ubuntu0.4` | `3.1.0-2ubuntu0.2` |
+| debian | udev | `204-5ubuntu20.28` | `204-5ubuntu20.26` |
+| python2 | certifi | `2018.4.16` | `2018.1.18` |
+| python2 | idna | `2.7` | `2.6` |
+| python2 | netifaces | `0.10.7` | `0.10.6` |
+| python2 | requests | `2.19.1` | `2.18.4` |
+| python2 | urllib3 | `1.23` | `1.22` |
+| python2 | websocket-client | `0.48.0` | `0.47.0` |
+| python3 | PyYAML | `3.13` | `3.12` |
+| python3 | certifi | `2018.4.16` | `2018.1.18` |
+| python3 | idna | `2.7` | `2.6` |
+| python3 | netifaces | `0.10.7` | `0.10.6` |
+| python3 | psutil | `5.4.6` | `5.4.3` |
+| python3 | requests | `2.19.1` | `2.18.4` |
+| python3 | ruamel.yaml | `0.15.43` | `0.15.37` |
+| python3 | shyaml | `0.5.2` | `0.5.0` |
+| python3 | urllib3 | `1.23` | `1.22` |
+| python3 | websocket-client | `0.48.0` | `0.47.0` |
+
+Added since r16:
+
+| type | name | version |
+|---|---|---|
+| debian | chrony | `1.29-1` |
+| debian | curl | `7.35.0-1ubuntu2.16` |
+| debian | ethtool | `1:3.13-1` |
+| debian | ifplugd | `0.28-19ubuntu1` |
+| debian | ifstat | `1.1-8build1` |
+| debian | iftop | `1.0~pre2-5` |
+| debian | install-info | `5.2.0.dfsg.1-2` |
+| debian | libavahi-client-dev | `0.6.31-4ubuntu1.2` |
+| debian | libavahi-common-dev | `0.6.31-4ubuntu1.2` |
+| debian | libavahi-compat-libdnssd-dev | `0.6.31-4ubuntu1.2` |
+| debian | libavahi-compat-libdnssd1 | `0.6.31-4ubuntu1.2` |
+| debian | libnss-mdns | `0.10-6` |
+| debian | libpcap-dev | `1.5.3-2` |
+| debian | libpcap0.8-dev | `1.5.3-2` |
+| debian | libperl5.18 | `5.18.2-2ubuntu1.6` |
+| debian | libsnmp-base | `5.7.2~dfsg-8.1ubuntu3.2` |
+| debian | libsnmp30 | `5.7.2~dfsg-8.1ubuntu3.2` |
+| debian | libtomcrypt0 | `1.17-5` |
+| debian | libtommath0 | `0.42.0-1build1` |
+| debian | python-urwid | `1.1.1-1build2` |
+| debian | speedometer | `2.8-1` |
+| debian | tcptrack | `1.4.2-1build1` |
+| debian | timelimit | `1.8-1` |
+| debian | u-boot-tools | `2013.10-3` |
+| python2 | urwid | `1.1.1` |
+| python3 | fbtftp | `0.2` |
+| python3 | sarge | `0.1.5.post0` |
+
+
+
 ## References
 
 ```text
