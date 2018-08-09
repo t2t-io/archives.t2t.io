@@ -25,6 +25,8 @@ sitename: archives
   - [14.04.3-r11](#14043-r11)
   - [14.04.3-r14](#14043-r14)
   - [14.04.3-r15](#14043-r15)
+  - [14.04.3-r16](#14043-r16)
+  - [14.04.3-r17](#14043-r17)
 - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -644,7 +646,7 @@ Comparing to previous version r14, here are major changes:
 
 ### 14.04.3-r16
 
-(2018/04/03) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.bmap).
+(2018/07/13) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r16.bmap).
 
 | property | value |
 |---|---|
@@ -685,12 +687,6 @@ Comparing to previous version r15, here are major changes:
 - New Python3 packages:
   - `sarge`
   - `fbtftp`
-
-- dotfiles
-  - change default nodejs from `4.4.7` to `8.11.1`
-  - keep nodejs `4.4.7` as optional
-  - remove nodejs `6.12.3`
-  - install nodejs `9.10.1` for experiments
 
 Package Differences:
 
@@ -769,6 +765,78 @@ Added since r16:
 | python3 | fbtftp | `0.2` |
 | python3 | sarge | `0.1.5.post0` |
 
+
+### 14.04.3-r17
+
+(2018/08/09) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r17.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r17.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [97aa1b8f9ce9918db9516c92d7d167f3730dc942](https://github.com/yagamy4680/bbb-image-gen/commit/97aa1b8f9ce9918db9516c92d7d167f3730dc942)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src,fbtftp-src,eeprog-0.7.7-github,socat-1.7.3.2-src"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r16, here are major changes:
+
+- New packages: (**utilities**)
+  - `netplug`
+  - `iproute`
+  - `nfs-common`
+- New Python3 packages:
+  - `csvkit`
+
+Package Differences:
+
+| type | name | r17.csv | r16.csv |
+|---|---|---|---|
+| debian | libtomcrypt0 | `1.17-5ubuntu0.1` | `1.17-5` |
+| debian | squashfs-tools | `1:4.2+20130409-2ubuntu0.14.04.3` | `1:4.2+20130409-2ubuntu0.14.04.2` |
+| debian | zlib1g | `1:1.2.8.dfsg-1ubuntu1.1` | `1:1.2.8.dfsg-1ubuntu1` |
+| debian | zlib1g-dev | `1:1.2.8.dfsg-1ubuntu1.1` | `1:1.2.8.dfsg-1ubuntu1` |
+| python3 | ruamel.yaml | `0.15.51` | `0.15.43` |
+
+Added since r17:
+
+| type | name | version |
+|---|---|---|
+| debian | iproute | `1:3.12.0-2ubuntu1.2` |
+| debian | keyutils | `1.5.6-1` |
+| debian | libevent-2.0-5 | `2.0.21-stable-1ubuntu1.14.04.2` |
+| debian | libgssglue1 | `0.4-2ubuntu1` |
+| debian | libnfsidmap2 | `0.25-5` |
+| debian | libtirpc1 | `0.2.2-5ubuntu2` |
+| debian | netplug | `1.2.9.2-1` |
+| debian | nfs-common | `1:1.2.8-6ubuntu1.2` |
+| debian | rpcbind | `0.2.1-2ubuntu2.2` |
+| python3 | Babel | `2.6.0` |
+| python3 | SQLAlchemy | `1.2.10` |
+| python3 | Unidecode | `1.0.22` |
+| python3 | agate | `1.6.1` |
+| python3 | agate-dbf | `0.2.0` |
+| python3 | agate-excel | `0.2.2` |
+| python3 | agate-sql | `0.5.3` |
+| python3 | csvkit | `1.0.3` |
+| python3 | dbfread | `2.0.7` |
+| python3 | et-xmlfile | `1.0.1` |
+| python3 | future | `0.16.0` |
+| python3 | isodate | `0.6.0` |
+| python3 | jdcal | `1.4` |
+| python3 | leather | `0.3.3` |
+| python3 | openpyxl | `2.5.5` |
+| python3 | parsedatetime | `2.4` |
+| python3 | python-slugify | `1.2.5` |
+| python3 | pytimeparse | `1.1.8` |
+| python3 | pytz | `2018.5` |
+| python3 | xlrd | `1.1.0` |
 
 
 ## References
