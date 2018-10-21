@@ -867,6 +867,11 @@ Comparing to previous version r16, here are major changes:
   - `traceroute`
   - `pppconfig`
   - `ipcalc`
+- dotfiles
+  - change default nodejs from `8.11.4` to `8.12.0` (because of npm 6.4.1, refer to [changelog](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V8.md#8.12.0))
+  - keep nodejs `4.4.7` as optional
+  - change nodejs `10.11.0` to `10.12.0`
+
 
 Package Differences:
 
