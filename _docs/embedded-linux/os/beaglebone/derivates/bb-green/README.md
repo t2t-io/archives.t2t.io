@@ -27,6 +27,7 @@ sitename: archives
   - [14.04.3-r15](#14043-r15)
   - [14.04.3-r16](#14043-r16)
   - [14.04.3-r17](#14043-r17)
+  - [14.04.3-r18](#14043-r18)
 - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -837,6 +838,105 @@ Added since r17:
 | python3 | pytimeparse | `1.1.8` |
 | python3 | pytz | `2018.5` |
 | python3 | xlrd | `1.1.0` |
+
+
+### 14.04.3-r18
+
+(2018/10/21) Downloads: [img](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r18.img.xz), [bmap](ubuntu-14.04.3-console-armhf-2016-02-11-raw-1700mb-r18.bmap).
+
+| property | value |
+|---|---|
+| base | [bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz](/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/) |
+| kernel | as-is |
+| applicable | bb-black, bb-green, bb-green-wireless (if applying [kernel](/embedded-linux/os/beaglebone/kernels/README.md) **4.4.39**) |
+
+Based on [bbb-image-gen](https://github.com/yagamy4680/bbb-image-gen) (commit [97aa1b8f9ce9918db9516c92d7d167f3730dc942](https://github.com/yagamy4680/bbb-image-gen/commit/97aa1b8f9ce9918db9516c92d7d167f3730dc942)), build with following options:
+
+```bash
+export PATH="$PATH:/opt/yapps-env/tools/bmap-tools-3.2"
+export BASE_IMAGE_URL="https://archives.t2t.io/embedded-linux/os/beaglebone/mirrors/elinux.org/bb-green/bone-ubuntu-14.04.3-console-armhf-2016-02-11-2gb.img.xz"
+export PRE_BUILT_PACKAGES="bluez-5.32-src,fswebcam-src,fbtftp-src,eeprog-0.7.7-github,socat-1.7.3.2-src"
+./gen-image ${BASE_IMAGE_URL}
+```
+
+Comparing to previous version r16, here are major changes:
+
+- New packages: (**utilities**)
+  - `bridge-utils`
+  - `openvpn`
+  - `traceroute`
+  - `pppconfig`
+  - `ipcalc`
+
+Package Differences:
+
+| type | name | r17.csv | r18.csv |
+|---|---|---|---|
+| debian | bind9-host | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | curl | `7.35.0-1ubuntu2.16` | `7.35.0-1ubuntu2.17` |
+| debian | dnsutils | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | hostapd | `1:2.1-0ubuntu1.5` | `1:2.1-0ubuntu1.6` |
+| debian | jq | `1.3-1.1ubuntu1` | `1.3-1.1ubuntu1.1` |
+| debian | libarchive13 | `3.1.2-7ubuntu2.4` | `3.1.2-7ubuntu2.6` |
+| debian | libbind9-90 | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | libcurl3 | `7.35.0-1ubuntu2.16` | `7.35.0-1ubuntu2.17` |
+| debian | libcurl4-openssl-dev | `7.35.0-1ubuntu2.16` | `7.35.0-1ubuntu2.17` |
+| debian | libdns100 | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | libgd-dev | `2.1.0-3ubuntu0.8` | `2.1.0-3ubuntu0.10` |
+| debian | libgd2-xpm-dev | `2.1.0-3ubuntu0.8` | `2.1.0-3ubuntu0.10` |
+| debian | libgd3 | `2.1.0-3ubuntu0.8` | `2.1.0-3ubuntu0.10` |
+| debian | libglib2.0-0 | `2.40.2-0ubuntu1` | `2.40.2-0ubuntu1.1` |
+| debian | libglib2.0-bin | `2.40.2-0ubuntu1` | `2.40.2-0ubuntu1.1` |
+| debian | libglib2.0-data | `2.40.2-0ubuntu1` | `2.40.2-0ubuntu1.1` |
+| debian | libglib2.0-dev | `2.40.2-0ubuntu1` | `2.40.2-0ubuntu1.1` |
+| debian | libisc95 | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | libisccfg90 | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | liblwres90 | `1:9.9.5.dfsg-3ubuntu0.17` | `1:9.9.5.dfsg-3ubuntu0.18` |
+| debian | libsnmp-base | `5.7.2~dfsg-8.1ubuntu3.2` | `5.7.2~dfsg-8.1ubuntu3.3` |
+| debian | libsnmp30 | `5.7.2~dfsg-8.1ubuntu3.2` | `5.7.2~dfsg-8.1ubuntu3.3` |
+| debian | libtirpc1 | `0.2.2-5ubuntu2` | `0.2.2-5ubuntu2.1` |
+| debian | libx11-6 | `2:1.6.2-1ubuntu2` | `2:1.6.2-1ubuntu2.1` |
+| debian | libx11-data | `2:1.6.2-1ubuntu2` | `2:1.6.2-1ubuntu2.1` |
+| debian | libx11-dev | `2:1.6.2-1ubuntu2` | `2:1.6.2-1ubuntu2.1` |
+| debian | libx11-doc | `2:1.6.2-1ubuntu2` | `2:1.6.2-1ubuntu2.1` |
+| debian | python-requests | `2.2.1-1ubuntu0.3` | `2.2.1-1ubuntu0.4` |
+| debian | python-requests-whl | `2.2.1-1ubuntu0.3` | `2.2.1-1ubuntu0.4` |
+| debian | python-six | `1.5.2-1ubuntu1` | `1.5.2-1ubuntu1.1` |
+| debian | python-six-whl | `1.5.2-1ubuntu1` | `1.5.2-1ubuntu1.1` |
+| debian | python-urllib3 | `1.7.1-1ubuntu4` | `1.7.1-1ubuntu4.1` |
+| debian | python-urllib3-whl | `1.7.1-1ubuntu4` | `1.7.1-1ubuntu4.1` |
+| debian | python-wheel | `0.24.0-1~ubuntu1` | `0.24.0-1~ubuntu1.1` |
+| debian | python3-requests | `2.2.1-1ubuntu0.3` | `2.2.1-1ubuntu0.4` |
+| debian | python3-six | `1.5.2-1ubuntu1` | `1.5.2-1ubuntu1.1` |
+| debian | python3-urllib3 | `1.7.1-1ubuntu4` | `1.7.1-1ubuntu4.1` |
+| debian | python3-wheel | `0.24.0-1~ubuntu1` | `0.24.0-1~ubuntu1.1` |
+| debian | wpasupplicant | `2.1-0ubuntu1.5` | `2.1-0ubuntu1.6` |
+| python2 | certifi | `2018.4.16` | `2018.10.15` |
+| python2 | requests | `2.19.1` | `2.20.0` |
+| python2 | urllib3 | `1.23` | `1.24` |
+| python2 | websocket-client | `0.48.0` | `0.53.0` |
+| python3 | SQLAlchemy | `1.2.10` | `1.2.12` |
+| python3 | certifi | `2018.4.16` | `2018.10.15` |
+| python3 | openpyxl | `2.5.5` | `2.5.9` |
+| python3 | psutil | `5.4.6` | `5.4.7` |
+| python3 | pybars3 | `0.9.3` | `0.9.6` |
+| python3 | python-slugify | `1.2.5` | `1.2.6` |
+| python3 | requests | `2.19.1` | `2.20.0` |
+| python3 | ruamel.yaml | `0.15.51` | `0.15.74` |
+| python3 | urllib3 | `1.23` | `1.24` |
+| python3 | websocket-client | `0.48.0` | `0.53.0` |
+
+Added since r18:
+
+| type | name | version |
+|---|---|---|
+| debian | bridge-utils | `1.5-6ubuntu2` |
+| debian | ipcalc | `0.41-4` |
+| debian | libpkcs11-helper1 | `1.11-1` |
+| debian | openvpn | `2.3.2-7ubuntu3.2` |
+| debian | pppconfig | `2.3.19ubuntu1` |
+| debian | traceroute | `1:2.0.20-0ubuntu0.1` |
+
 
 
 ## References
